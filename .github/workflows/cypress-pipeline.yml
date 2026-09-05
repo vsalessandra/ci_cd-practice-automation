@@ -21,8 +21,9 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      - name:
-        uses: actions/upload-artifact@v3
+      - name: Upload do relatório
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
-            name: Relatorio
-            path: cypress/reports/html
+          name: Relatorio
+          path: cypress/reports/html
