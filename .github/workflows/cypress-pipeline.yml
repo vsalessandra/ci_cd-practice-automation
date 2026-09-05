@@ -20,3 +20,10 @@ jobs:
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Upload do relatório
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Relatorio
+          path: cypress/reports/html
