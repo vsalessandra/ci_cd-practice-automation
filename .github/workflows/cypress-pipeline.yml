@@ -1,0 +1,22 @@
+name: Run Tests
+#quando será executada
+on:
+  pull_request:
+    branches: [main]
+#trabalhos a serem feitos
+jobs:
+  cypress-run:
+    #maquina que sera executado
+    runs-on: ubuntu-latest
+
+    #passo a passo para rodar os testes
+    steps:
+      - name: Checkout/Clone do projeto
+        uses: actions/checkout@v4
+
+      - name: Run Testes
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
