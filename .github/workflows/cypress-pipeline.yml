@@ -22,7 +22,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name:
-        uses: actions/uploadartifact@v3
+        uses: actions/upload-artifact@v3
         with:
             name: Relatorio
             path: cypress/reports/html
