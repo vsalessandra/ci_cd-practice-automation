@@ -1,0 +1,12 @@
+node_modules/
+.history/
+
+# Cypress artifacts
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/reports/
+
+# Env / logs
+.env
+npm-debug.log*
